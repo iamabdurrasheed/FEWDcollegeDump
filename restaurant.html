@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyderabadi Restaurant Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        #main-heading {
+            text-align: center;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .nav-menu {
+            background-color: #333;
+            padding: 15px;
+            text-align: center;
+        }
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+        .nav-menu a:hover {
+            text-decoration: underline;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+            border: 2px solid #333;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #555;
+            color: white;
+        }
+        table td:nth-child(2) {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        table td:nth-child(3) {
+            text-align: center;
+            width: 120px;
+        }
+        .menu-card {
+            width: 80%;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .menu-card:hover {
+            background-color: #f4f4f4;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 40px;
+        }
+        ol {
+            list-style-type: upper-roman;
+            padding-left: 40px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            margin-top: 30px;
+        }
+        
+        .add-to-cart {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            max-width: 100px;
+        }
+
+        .add-to-cart:hover {
+            background-color: #45a049;
+        }
+
+        #cart-tab {
+            display: none;
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 300px;
+            height: 100%;
+            background-color: white;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .cart-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+        #close-cart {
+            float: right;
+            cursor: pointer;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-heading">Welcome to Our Hyderabadi Restaurant</h1>
+    <div class="nav-menu">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Contact Us</a>
+    </div>
+    <div class="menu-card">
+        <h2>Our Specialties</h2>
+        <ul>
+            <li>Hyderabadi Biryani</li>
+            <li>Haleem</li>
+            <li>Pathar Ka Gosht</li>
+            <li>Double Ka Meetha</li>
+            <li>Irani Chai</li>
+        </ul>
+        <h2>Specialties (Ordered)</h2>
+        <ol>
+            <li>Hyderabadi Biryani</li>
+            <li>Haleem</li>
+            <li>Pathar Ka Gosht</li>
+            <li>Double Ka Meetha</li>
+            <li>Irani Chai</li>
+        </ol>
+    </div>
+    <div class="menu-card">
+        <h2>Menu</h2>
+        <table>
+            <tr>
+                <th>Dish Name</th>
+                <th>Price</th>
+                <th>Action</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Hyderabadi Biryani</td>
+                <td>$15</td>
+                <td>
+                    <button class="add-to-cart" onclick="addToCart('Hyderabadi Biryani', 15)">Add to Cart</button>
+                </td>
+                <td>Flavored rice with succulent pieces of mutton or chicken, cooked with traditional spices.</td>
+            </tr>
+            <tr>
+                <td>Haleem</td>
+                <td>$12</td>
+                <td>
+                    <button class="add-to-cart" onclick="addToCart('Haleem', 12)">Add to Cart</button>
+                </td>
+                <td>Slow-cooked wheat, meat, and spices creating a rich and savory dish.</td>
+            </tr>
+            <tr>
+                <td>Pathar Ka Gosht</td>
+                <td>$18</td>
+                <td>
+                    <button class="add-to-cart" onclick="addToCart('Pathar Ka Gosht', 18)">Add to Cart</button>
+                </td>
+                <td>Succulent meat pieces grilled on a hot stone for a smoky flavor.</td>
+            </tr>
+            <tr>
+                <td>Double Ka Meetha</td>
+                <td>$8</td>
+                <td>
+                    <button class="add-to-cart" onclick="addToCart('Double Ka Meetha', 8)">Add to Cart</button>
+                </td>
+                <td>Traditional Hyderabadi bread pudding soaked in milk and sugar.</td>
+            </tr>
+            <tr>
+                <td>Irani Chai</td>
+                <td>$5</td>
+                <td>
+                    <button class="add-to-cart" onclick="addToCart('Irani Chai', 5)">Add to Cart</button>
+                </td>
+                <td>Strong and flavorful tea served with Osmania biscuits.</td>
+            </tr>
+        </table>
+    </div>
+    <div id="cart-tab">
+        <span id="close-cart" onclick="closeCart()">×</span>
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <hr>
+        <h3>Total: $<span id="cart-total">0</span></h3>
+        <button onclick="placeOrder()" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; width: 100%;">Place Order</button>
+    </div>
+    <footer>
+        <p>&copy; 2024 Hyderabadi Restaurant | Contact:800868868 | Email: @hyderabadirestaurant.com</p>
+    </footer>
+    <script>
+    let cart = [];
+    let total = 0;
+
+    function addToCart(item, price) {
+        cart.push({ 
+            id: Date.now(), // Add unique id for each item
+            item, 
+            price 
+        });
+        total += price;
+        updateCart();
+        document.getElementById('cart-tab').style.display = 'block';
+    }
+
+    function removeFromCart(id) {
+        const itemIndex = cart.findIndex(item => item.id === id);
+        if (itemIndex > -1) {
+            total -= cart[itemIndex].price;
+            cart.splice(itemIndex, 1);
+            updateCart();
+        }
+    }
+
+    function updateCart() {
+        const cartItems = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+        
+        cartItems.innerHTML = cart.map(item => `
+            <div class="cart-item">
+                <span>${item.item} - $${item.price}</span>
+                <button class="remove-item" onclick="removeFromCart(${item.id})">−</button>
+            </div>
+        `).join('');
+        
+        cartTotal.textContent = total.toFixed(2);
+        
+        if (cart.length === 0) {
+            closeCart();
+        }
+    }
+
+    function closeCart() {
+        document.getElementById('cart-tab').style.display = 'none';
+    }
+
+    function placeOrder() {
+        if (cart.length === 0) {
+            alert('Your cart is empty!');
+            return;
+        }
+        alert(`Order placed successfully!\nTotal amount: $${total.toFixed(2)}`);
+        cart = [];
+        total = 0;
+        updateCart();
+        closeCart();
+    }
+</script>
+</body>
+</html>

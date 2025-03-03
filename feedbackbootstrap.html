@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .is-invalid {
+            border-color: #dc3545 !important;
+        }
+        .invalid-feedback {
+            color: #dc3545;
+            display: block;
+            margin-top: 0.25rem;
+        }
+        .is-valid {
+            border-color: #198754 !important;
+        }
+    </style>
 </head>
 <body class="bg-dark text-white py-4">
     <div class="container">
@@ -13,7 +26,7 @@
                 <div class="card bg-dark text-white border-secondary">
                     <div class="card-body p-4">
                         <h1 class="text-center mb-4">My Feedback Form</h1>
-                        <form>
+                        <form id="feedbackForm">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name (optional)</label>
                                 <input type="text" class="form-control bg-secondary text-white border-secondary" id="name" name="name">
@@ -31,7 +44,8 @@
 
                             <div class="mb-3">
                                 <label for="rating" class="form-label">Rating</label>
-                                <select class="form-select bg-secondary text-white border-secondary" id="rating" name="rating">
+                                <select class="form-select bg-secondary text-white border-secondary" id="rating" name="rating" required>
+                                    <option value="">Select a rating</option>
                                     <option value="1">1 - Very Poor</option>
                                     <option value="2">2 - Poor</option>
                                     <option value="3">3 - Average</option>
@@ -42,7 +56,7 @@
 
                             <div class="mb-3">
                                 <label for="questions" class="form-label">Any Questions regarding product or service</label>
-                                <textarea class="form-control bg-secondary text-white border-secondary" id="questions" name="questions" rows="4"></textarea>
+                                <textarea class="form-control bg-secondary text-white border-secondary" id="questions" name="questions" rows="4" required></textarea>
                             </div>
 
                             <div class="mb-4">
@@ -61,5 +75,133 @@
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('feedbackForm');
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const phoneInput = document.getElementById('phone');
+            const ratingSelect = document.getElementById('rating');
+            const questionsTextarea = document.getElementById('questions');
+            
+            const nameRegex = /^[a-zA-Z\s]{2,50}$/;
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+            
+            nameInput.addEventListener('input', function() {
+                if (nameInput.value.trim() !== '') {
+                    validateField(nameInput, nameRegex, 'Please enter a valid name (letters only, 2-50 characters)');
+                } else {
+                    clearValidation(nameInput);
+                }
+            });
+            
+            emailInput.addEventListener('input', function() {
+                if (emailInput.value.trim() !== '') {
+                    validateField(emailInput, emailRegex, 'Please enter a valid email address');
+                } else {
+                    clearValidation(emailInput);
+                }
+            });
+            
+            phoneInput.addEventListener('input', function() {
+                if (phoneInput.value.trim() !== '') {
+                    validateField(phoneInput, phoneRegex, 'Please enter a valid phone number');
+                } else {
+                    clearValidation(phoneInput);
+                }
+            });
+            
+            ratingSelect.addEventListener('change', function() {
+                if (ratingSelect.value === '') {
+                    setInvalid(ratingSelect, 'Please select a rating');
+                } else {
+                    setValid(ratingSelect);
+                }
+            });
+            
+            questionsTextarea.addEventListener('input', function() {
+                if (questionsTextarea.value.trim().length < 10) {
+                    setInvalid(questionsTextarea, 'Please enter at least 10 characters');
+                } else {
+                    setValid(questionsTextarea);
+                }
+            });
+            
+            form.addEventListener('submit', function(event) {
+                let isValid = true;
+                
+                if (nameInput.value.trim() !== '' && !validateField(nameInput, nameRegex, 'Please enter a valid name')) {
+                    isValid = false;
+                }
+                
+                if (emailInput.value.trim() !== '' && !validateField(emailInput, emailRegex, 'Please enter a valid email address')) {
+                    isValid = false;
+                }
+                
+                if (phoneInput.value.trim() !== '' && !validateField(phoneInput, phoneRegex, 'Please enter a valid phone number')) {
+                    isValid = false;
+                }
+                
+                if (ratingSelect.value === '') {
+                    setInvalid(ratingSelect, 'Please select a rating');
+                    isValid = false;
+                }
+                
+                if (questionsTextarea.value.trim().length < 10) {
+                    setInvalid(questionsTextarea, 'Please enter at least 10 characters');
+                    isValid = false;
+                }
+                
+                if (!isValid) {
+                    event.preventDefault();
+                }
+            });
+            
+            function validateField(input, regex, errorMessage) {
+                if (!regex.test(input.value.trim())) {
+                    setInvalid(input, errorMessage);
+                    return false;
+                } else {
+                    setValid(input);
+                    return true;
+                }
+            }
+            
+            function setInvalid(input, message) {
+                input.classList.add('is-invalid');
+                input.classList.remove('is-valid');
+                
+                let feedback = input.nextElementSibling;
+                if (!feedback || !feedback.classList.contains('invalid-feedback')) {
+                    feedback = document.createElement('div');
+                    feedback.className = 'invalid-feedback';
+                    input.parentNode.insertBefore(feedback, input.nextSibling);
+                }
+                
+                feedback.textContent = message;
+            }
+            
+            function setValid(input) {
+                input.classList.remove('is-invalid');
+                input.classList.add('is-valid');
+                
+                let feedback = input.nextElementSibling;
+                if (feedback && feedback.classList.contains('invalid-feedback')) {
+                    feedback.textContent = '';
+                }
+            }
+            
+            function clearValidation(input) {
+                input.classList.remove('is-invalid');
+                input.classList.remove('is-valid');
+                
+                let feedback = input.nextElementSibling;
+                if (feedback && feedback.classList.contains('invalid-feedback')) {
+                    feedback.textContent = '';
+                }
+            }
+        });
+    </script>
 </body>
 </html>

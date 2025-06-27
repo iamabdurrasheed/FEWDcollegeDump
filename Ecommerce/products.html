@@ -1,364 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ShopEasy - Products</title>
-  <!-- Bootstrap 5.3 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - E-Commerce</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">ShopEasy</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="products.html">Products</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="partners.html">Partners</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact Us</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Products Header Section -->
-  <header class="bg-light py-5">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-8">
-          <h1 class="display-4 fw-bold">Our Products</h1>
-          <p class="lead">Discover our wide range of high-quality products at competitive prices.</p>
-        </div>
-        <div class="col-lg-4">
-          <!-- Product Search Box -->
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Search products...">
-            <button class="btn btn-primary" type="button">Search</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Product Categories -->
-  <section class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Shop by Category</h2>
-      <div class="row g-4">
-        <!-- Category Card 1 -->
-        <div class="col-md-4">
-          <div class="card h-100">
-            <img src="assets/images/electronics.jpg" class="card-img-top" alt="Electronics">
-            <div class="card-body text-center">
-              <h5 class="card-title">Electronics</h5>
-              <p class="card-text">Discover the latest gadgets and electronics for your everyday needs.</p>
-              <a href="#electronics" class="btn btn-outline-primary">View Products</a>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">E-Shop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="partners.html">Partners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                </ul>
             </div>
-          </div>
         </div>
-        <!-- Category Card 2 -->
-        <div class="col-md-4">
-          <div class="card h-100">
-            <img src="assets/images/fashion.jpg" class="card-img-top" alt="Fashion">
-            <div class="card-body text-center">
-              <h5 class="card-title">Fashion</h5>
-              <p class="card-text">Stay stylish with our trending fashion collection for all occasions.</p>
-              <a href="#fashion" class="btn btn-outline-primary">View Products</a>
-            </div>
-          </div>
-        </div>
-        <!-- Category Card 3 -->
-        <div class="col-md-4">
-          <div class="card h-100">
-            <img src="assets/images/home-kitchen.jpg" class="card-img-top" alt="Home & Kitchen">
-            <div class="card-body text-center">
-              <h5 class="card-title">Home & Kitchen</h5>
-              <p class="card-text">Transform your living space with our home and kitchen essentials.</p>
-              <a href="#home-kitchen" class="btn btn-outline-primary">View Products</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- Featured Products -->
-  <section class="py-5 bg-light" id="electronics">
-    <div class="container">
-      <h2 class="text-center mb-4">Electronics</h2>
-      <div class="row g-4">
-        <!-- Product Card 1 -->
-        <div class="col-md-4 col-lg-3">
-          <div class="card h-100">
-            <div class="badge bg-danger position-absolute top-0 end-0 m-2">Sale</div>
-            <img src="assets/images/product1.jpg" class="card-img-top" alt="Product 1">
-            <div class="card-body">
-              <h5 class="card-title">Wireless Earbuds</h5>
-              <div class="d-flex justify-content-between mb-2">
-                <p class="text-muted mb-0"><s>$99.99</s></p>
-                <p class="text-danger fw-bold mb-0">$79.99</p>
-              </div>
-              <div class="d-flex justify-content-between">
-                <div>
-                  <i class="bi bi-star-fill text-warning"></i>
-                  <i class="bi bi-star-fill text-warning"></i>
-                  <i class="bi bi-star-fill text-warning"></i>
-                  <i class="bi bi-star-fill text-warning"></i>
-                  <i class="bi bi-star-half text-warning"></i>
-                  <small>(42)</small>
+    <!-- Main Content -->
+    <main class="py-5">
+        <div class="container">
+            <h1 class="mb-4">Our Products</h1>
+            <div class="row">
+                <!-- Product Categories -->
+                <div class="col-md-3 mb-4">
+                    <div class="card category-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Electronics</h5>
+                            <p class="card-text">Latest gadgets and electronics</p>
+                            <a href="#" class="btn btn-primary">View Category</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="card-footer bg-transparent border-top-0">
-              <div class="d-grid">
-                <button class="btn btn-primary">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Product Card 2 -->
-        <div class="col-md-4 col-lg-3">
-          <div class="card h-100">
-            <img src="assets/images/product2.jpg" class="card-img-top" alt="Product 2">
-            <div class="card-body">
-              <h5 class="card-title">Smart Watch</h5>
-              <div class="d-flex justify-content-between mb-2">
-                <p class="text-muted mb-0"></p>
-                <p class="fw-bold mb-0">$149.99</p>
-              </div>
-              <div class="d-flex justify-content-between">
-                <div>
-                  <i class="bi bi-star-fill text-warning"></i>
-                  <i class="bi bi-star-fill text-warning"></i>
-                  <i class="bi bi-star-fill text-warning"></i>
-                  <i class="bi bi-star-fill text-warning"></i>
-                  <i class="bi bi-star text-warning"></i>
-                  <small>(28)</small>
+                <div class="col-md-3 mb-4">
+                    <div class="card category-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Clothing</h5>
+                            <p class="card-text">Trendy fashion for everyone</p>
+                            <a href="#" class="btn btn-primary">View Category</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="card-footer bg-transparent border-top-0">
-              <div class="d-grid">
-                <button class="btn btn-primary">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- More products can be added here -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Fashion Products -->
-  <section class="py-5" id="fashion">
-    <div class="container">
-      <h2 class="text-center mb-4">Fashion</h2>
-      <div class="row g-4">
-        <!-- Product Card 3 -->
-        <div class="col-md-4 col-lg-3">
-          <div class="card h-100">
-            <img src="assets/images/product3.jpg" class="card-img-top" alt="Product 3">
-            <div class="card-body">
-              <h5 class="card-title">Men's Leather Jacket</h5>
-              <div class="d-flex justify-content-between mb-2">
-                <p class="text-muted mb-0"></p>
-                <p class="fw-bold mb-0">$199.99</p>
-              </div>
-              <div class="d-flex justify-content-between">
-                <div>
-                  <i class="bi bi-star-fill text-warning"></i>
-                  <i class="bi bi-star-fill text-warning"></i>
-                  <i class="bi bi-star-fill text-warning"></i>
-                  <i class="bi bi-star-fill text-warning"></i>
-                  <i class="bi bi-star-fill text-warning"></i>
-                  <small>(56)</small>
+                <div class="col-md-3 mb-4">
+                    <div class="card category-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Home Goods</h5>
+                            <p class="card-text">Decorate your home with style</p>
+                            <a href="#" class="btn btn-primary">View Category</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="card-footer bg-transparent border-top-0">
-              <div class="d-grid">
-                <button class="btn btn-primary">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Product Card 4 -->
-        <div class="col-md-4 col-lg-3">
-          <div class="card h-100">
-            <div class="badge bg-danger position-absolute top-0 end-0 m-2">Sale</div>
-            <img src="assets/images/product4.jpg" class="card-img-top" alt="Product 4">
-            <div class="card-body">
-              <h5 class="card-title">Women's Handbag</h5>
-              <div class="d-flex justify-content-between mb-2">
-                <p class="text-muted mb-0"><s>$89.99</s></p>
-                <p class="text-danger fw-bold mb-0">$69.99</p>
-              </div>
-              <div class="d-flex justify-content-between">
-                <div>
-                  <i class="bi bi-star-fill text-warning"></i>
-                  <i class="bi bi-star-fill text-warning"></i>
-                  <i class="bi bi-star-fill text-warning"></i>
-                  <i class="bi bi-star-half text-warning"></i>
-                  <i class="bi bi-star text-warning"></i>
-                  <small>(34)</small>
+                <div class="col-md-3 mb-4">
+                    <div class="card category-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Sports</h5>
+                            <p class="card-text">Equipment for all sports</p>
+                            <a href="#" class="btn btn-primary">View Category</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="card-footer bg-transparent border-top-0">
-              <div class="d-grid">
-                <button class="btn btn-primary">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- More products can be added here -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Home & Kitchen Products -->
-  <section class="py-5 bg-light" id="home-kitchen">
-    <div class="container">
-      <h2 class="text-center mb-4">Home & Kitchen</h2>
-      <div class="row g-4">
-        <!-- Product Card 5 -->
-        <div class="col-md-4 col-lg-3">
-          <div class="card h-100">
-            <img src="assets/images/product5.jpg" class="card-img-top" alt="Product 5">
-            <div class="card-body">
-              <h5 class="card-title">Coffee Maker</h5>
-              <div class="d-flex justify-content-between mb-2">
-                <p class="text-muted mb-0"></p>
-                <p class="fw-bold mb-0">$129.99</p>
-              </div>
-              <div class="d-flex justify-content-between">
-                <div>
-                  <i class="bi bi-star-fill text-warning"></i>
-                  <i class="bi bi-star-fill text-warning"></i>
-                  <i class="bi bi-star-fill text-warning"></i>
-                  <i class="bi bi-star-fill text-warning"></i>
-                  <i class="bi bi-star-half text-warning"></i>
-                  <small>(47)</small>
+                <div class="col-md-3 mb-4">
+                    <div class="card category-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Books</h5>
+                            <p class="card-text">Bestsellers and classics</p>
+                            <a href="#" class="btn btn-primary">View Category</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="card-footer bg-transparent border-top-0">
-              <div class="d-grid">
-                <button class="btn btn-primary">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Product Card 6 -->
-        <div class="col-md-4 col-lg-3">
-          <div class="card h-100">
-            <div class="badge bg-primary position-absolute top-0 end-0 m-2">New</div>
-            <img src="assets/images/product6.jpg" class="card-img-top" alt="Product 6">
-            <div class="card-body">
-              <h5 class="card-title">Cookware Set</h5>
-              <div class="d-flex justify-content-between mb-2">
-                <p class="text-muted mb-0"></p>
-                <p class="fw-bold mb-0">$249.99</p>
-              </div>
-              <div class="d-flex justify-content-between">
-                <div>
-                  <i class="bi bi-star-fill text-warning"></i>
-                  <i class="bi bi-star-fill text-warning"></i>
-                  <i class="bi bi-star-fill text-warning"></i>
-                  <i class="bi bi-star-fill text-warning"></i>
-                  <i class="bi bi-star text-warning"></i>
-                  <small>(19)</small>
+                <div class="col-md-3 mb-4">
+                    <div class="card category-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Toys</h5>
+                            <p class="card-text">Fun for all ages</p>
+                            <a href="#" class="btn btn-primary">View Category</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card category-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Beauty</h5>
+                            <p class="card-text">Skincare and makeup</p>
+                            <a href="#" class="btn btn-primary">View Category</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card category-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Furniture</h5>
+                            <p class="card-text">Modern and comfortable</p>
+                            <a href="#" class="btn btn-primary">View Category</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="card-footer bg-transparent border-top-0">
-              <div class="d-grid">
-                <button class="btn btn-primary">Add to Cart</button>
-              </div>
-            </div>
-          </div>
         </div>
-        <!-- More products can be added here -->
-      </div>
-    </div>
-  </section>
+    </main>
 
-  <!-- Newsletter Subscription -->
-  <section class="py-5 bg-dark text-white">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h3>Subscribe to Our Newsletter</h3>
-          <p class="lead">Get updates on new products and exclusive offers!</p>
-          <div class="input-group mb-3 mx-auto" style="max-width: 500px;">
-            <input type="email" class="form-control" placeholder="Enter your email">
-            <button class="btn btn-primary" type="button">Subscribe</button>
-          </div>
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>© 2025 E-Shop. All rights reserved.</p>
         </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- Footer -->
-  <footer class="py-4 bg-secondary text-white">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3 mb-3">
-          <h5>ShopEasy</h5>
-          <p>Your one-stop shop for all your needs.</p>
-        </div>
-        <div class="col-md-3 mb-3">
-          <h5>Quick Links</h5>
-          <ul class="list-unstyled">
-            <li><a href="index.html" class="text-white">Home</a></li>
-            <li><a href="products.html" class="text-white">Products</a></li>
-            <li><a href="about.html" class="text-white">About Us</a></li>
-            <li><a href="contact.html" class="text-white">Contact Us</a></li>
-          </ul>
-        </div>
-        <div class="col-md-3 mb-3">
-          <h5>Customer Service</h5>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-white">FAQ</a></li>
-            <li><a href="#" class="text-white">Shipping Policy</a></li>
-            <li><a href="#" class="text-white">Return Policy</a></li>
-            <li><a href="#" class="text-white">Privacy Policy</a></li>
-          </ul>
-        </div>
-        <div class="col-md-3 mb-3">
-          <h5>Contact Info</h5>
-          <address class="mb-0">
-            <p>123 Shopping Street<br>E-Commerce City, EC 12345</p>
-            <p>Phone: (123) 456-7890<br>Email: info@shopeasy.com</p>
-          </address>
-        </div>
-      </div>
-      <hr>
-      <div class="text-center">
-        <p class="mb-0">&copy; 2025 ShopEasy. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Bootstrap 5.3 JS Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Bootstrap 5.3 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

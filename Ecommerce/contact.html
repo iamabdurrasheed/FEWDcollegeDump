@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - E-Commerce</title>
+    <title>Contact Us - E-Commerce</title>
     <!-- Bootstrap 5.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -18,10 +18,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="home.html">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="about.html">About Us</a>
+                        <a class="nav-link" href="about.html">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="products.html">Products</a>
@@ -30,7 +30,7 @@
                         <a class="nav-link" href="partners.html">Partners</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact Us</a>
+                        <a class="nav-link active" href="contact.html">Contact Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="gallery.html">Gallery</a>
@@ -43,25 +43,35 @@
     <!-- Main Content -->
     <main class="py-5">
         <div class="container">
-            <h1 class="mb-4">About Us</h1>
+            <h1 class="mb-4">Contact Us</h1>
             <div class="row">
-                <div class="col-md-8">
-                    <!-- Our Story Section -->
-                    <h2>Our Story</h2>
-                    <p class="lead">We are a family-owned business.</p>
-                    <p>Founded in 2010, E-Shop has grown from a small local store to a nationwide e-commerce platform. Our mission is to provide high-quality products at competitive prices with excellent customer service.</p>
-                    <p>We pride ourselves on our dedication to sustainability and ethical sourcing. All our products are carefully selected to ensure they meet our standards for quality and environmental responsibility.</p>
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Our Values</h5>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Customer satisfaction</li>
-                                <li class="list-group-item">Quality products</li>
-                                <li class="list-group-item">Ethical sourcing</li>
-                                <li class="list-group-item">Community support</li>
-                            </ul>
+                            <h5 class="card-title">Contact Information</h5>
+                            <p class="card-text">
+                                <strong>Address:</strong> 123 E-Commerce St, Shopping City, SC 12345<br>
+                                <strong>Phone:</strong> (123) 456-7890<br>
+                                <strong>Email:</strong> info@eshop.com<br>
+                                <strong>Hours:</strong> Monday-Friday, 9am-5pm
+                            </p>
                         </div>
                     </div>
                 </div>
